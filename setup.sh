@@ -93,6 +93,8 @@ fi
 
 export ZSH="\$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
+export PATH=$PATH:$HOME/.local/bin
+
 
 plugins=(git)
 source \$ZSH/oh-my-zsh.sh
