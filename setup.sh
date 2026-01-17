@@ -8,7 +8,9 @@ URL_P10K="https://raw.githubusercontent.com/Matzull/Linux_setup/refs/heads/maste
 install_dependencies() {
     echo "📦 Installing system dependencies..."
     sudo apt-get update
-    sudo apt-get install -y zsh git curl ripgrep fzf neovim
+    sudo apt-get install -y zsh git curl ripgrep neovim
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    ~/.fzf/install
 }
 
 # Function to install Oh My Zsh
