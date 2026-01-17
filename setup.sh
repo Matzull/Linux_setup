@@ -46,6 +46,7 @@ install_modern_tools() {
     curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
     bash <(curl --proto '=https' --tlsv1.2 -sSf https://setup.atuin.sh)
     source $HOME/.atuin/bin/env
+    atuin import bash
 }
 
 # Function to install Eza and download visual config
