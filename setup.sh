@@ -52,6 +52,8 @@ install_modern_tools() {
     bash <(curl --proto '=https' --tlsv1.2 -sSf https://setup.atuin.sh)
     source $HOME/.atuin/bin/env
     atuin import bash
+    sqlite3 ~/.local/share/atuin/history.db "SELECT ': ' || (timestamp/1000000000) || ':0;' || command FROM history ORDER BY timestamp ASC" > ~/.zsh_history
+    fc -R ~/.zsh_history
 }
 
 # Function to install Eza and download visual config
