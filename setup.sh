@@ -9,6 +9,9 @@ install_dependencies() {
     echo "📦 Installing system dependencies..."
     sudo apt-get update
     sudo apt-get install -y zsh git curl ripgrep neovim
+}
+
+install_fzf(){
     git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
     ~/.fzf/install
 }
@@ -87,7 +90,7 @@ EOT
 # Function to generate .zshrc
 create_zshrc() {
     echo "📝 Generating final .zshrc..."
-    cat <<EOT >> ~/.zshrc
+    cat <<EOT > ~/.zshrc
 # Powerlevel10k instant prompt
 if [[ -r "\${XDG_CACHE_HOME:-\$HOME/.cache}/p10k-instant-prompt-\${(%):-%n}.zsh" ]]; then
   source "\${XDG_CACHE_HOME:-\$HOME/.cache}/p10k-instant-prompt-\${(%):-%n}.zsh"
@@ -138,6 +141,7 @@ function show_menu() {
     echo "8. Create Custom Aliases"
     echo "9. Generate .zshrc"
     echo "10. Change Default Shell"
+    echo "11. Install FZF"
     echo "0. Exit"
     echo "========================================="
     read -p "Select an option: " choice
@@ -157,6 +161,7 @@ while true; do
             create_aliases
             create_zshrc
             change_shell
+            install_fzf
             echo "✅ All done! Please restart your terminal."
             break
             ;;
