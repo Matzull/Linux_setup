@@ -174,6 +174,7 @@ while true; do
         8) create_aliases ;;
         9) create_zshrc ;;
         10) change_shell ;;
+        11) install_fzf ;;
         0) echo "Exiting..."; exit 0 ;;
         *) echo "❌ Invalid option, please try again." ;;
     esac
